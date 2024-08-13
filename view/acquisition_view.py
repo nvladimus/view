@@ -7,7 +7,7 @@ from qtpy.QtCore import Slot, Qt
 import inflection
 from time import sleep
 from qtpy.QtWidgets import QGridLayout, QWidget, QComboBox, QSizePolicy, QScrollArea, QDockWidget, \
-    QLabel, QPushButton, QSplitter, QLineEdit, QSpinBox, QDoubleSpinBox, QProgressBar, QSlider, QApplication, \
+    QLabel, QSplitter, QLineEdit, QSpinBox, QDoubleSpinBox, QProgressBar, QSlider, QApplication, \
     QMessageBox, QPushButton, QFileDialog
 from qtpy.QtGui import QFont
 from napari.qt.threading import thread_worker, create_worker
