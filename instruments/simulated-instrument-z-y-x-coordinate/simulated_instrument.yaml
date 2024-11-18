@@ -30,7 +30,7 @@ instrument:
   devices:
     639nm:
       color: red
-      driver: voxel.devices.lasers.simulated
+      driver: voxel.devices.laser.simulated
       init:
         id: COM7
         wavelength: 639
@@ -261,7 +261,7 @@ instrument:
       type: daq
     488nm:
       color: purple
-      driver: voxel.devices.lasers.simulated
+      driver: voxel.devices.laser.simulated
       init:
         wavelength: 488
         coefficients:
@@ -277,7 +277,7 @@ instrument:
       type: laser
     561nm:
       color: greenyellow
-      driver: voxel.devices.lasers.simulated
+      driver: voxel.devices.laser.simulated
       init:
         id : COM3
         wavelength: 561

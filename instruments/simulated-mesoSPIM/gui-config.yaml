@@ -1,24 +1,24 @@
 instrument_view:
   device_widgets:
-      ASI MS-8000 x axis:
+      ASI-Tiger-X:
         type:   scanning_stage
         driver: view.widgets.device_widgets.stage_widget
         module: StageWidget
         init:
           advanced_user: False
-      ASI MS-8000 y axis:
+      ASI-Tiger-Y:
         type: tiling_stage
         driver: view.widgets.device_widgets.stage_widget
         module: StageWidget
         init:
           advanced_user: False
-      ASI MS-8000 z axis:
+      ASI-Tiger-Z:
         type:   tiling_stage
         driver: view.widgets.device_widgets.stage_widget
         module: StageWidget
         init:
           advanced_user: False
-      n stage axis:
+      ASI-Tiger-F:
         type: focusing_stage
         driver: view.widgets.device_widgets.stage_widget
         module: StageWidget
@@ -53,7 +53,7 @@ instrument_view:
         init:
           color: red
           advanced_user: True
-      ASI FW-1000:
+      ZWO-EWF:
         type: filter_wheel
         driver: view.widgets.device_widgets.filter_wheel_widget
         module: FilterWheelWidget
@@ -65,7 +65,7 @@ instrument_view:
             BP561: yellowgreen
             LP638: red
             MB405/488/561/638: magenta
-      vp-151mx:
+      Iris15:
         type: camera
         driver: view.widgets.device_widgets.camera_widget
         module: CameraWidget

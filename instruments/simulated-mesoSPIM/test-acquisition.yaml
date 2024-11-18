@@ -17,7 +17,7 @@ acquisition:
         deliminator: _
         format: [instrument_type, subject_id]
   operations:
-    vp-151mx:
+    Iris15:
       imaris:
         type: writer
         driver: voxel.writers.imaris

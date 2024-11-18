@@ -2,29 +2,23 @@ instrument:
   channels:
     '488':
       cameras:
-      - vp-151mx
+      - Iris15
       filters:
       - BP488
-      focusing_stages:
-      - n stage axis
       lasers:
       - 488nm
     '561':
       cameras:
-      - vp-151mx
+      - Iris15
       filters:
       - BP561
-      focusing_stages:
-      - n stage axis
       lasers:
       - 561nm
     '639':
       cameras:
-      - vp-151mx
+      - Iris15
       filters:
       - LP638
-      focusing_stages:
-      - n stage axis
       lasers:
       - 639nm
   devices:
@@ -36,7 +30,7 @@ instrument:
         wavelength: 639
       module: SimulatedLaser
       type: laser
-    ASI FW-1000:
+    ZWO-EWF:
       driver: voxel.devices.filterwheel.simulated
       init:
         filters:
@@ -81,7 +75,7 @@ instrument:
           module: Filter
           init:
             id: MB405/488/561/638
-    ASI MS-8000 x axis:
+    ASI-Tiger-X:
       driver: voxel.devices.stage.simulated
       init:
         hardware_axis: x
@@ -90,7 +84,7 @@ instrument:
       properties:
         speed_mm_s: 1.0
       type: scanning_stage
-    ASI MS-8000 z axis:
+    ASI-Tiger-Z:
       driver: voxel.devices.stage.simulated
       init:
         hardware_axis: z
@@ -99,7 +93,7 @@ instrument:
       properties:
         speed_mm_s: 1.0
       type: tiling_stage
-    ASI MS-8000 y axis:
+    ASI-Tiger-Y:
       driver: voxel.devices.stage.simulated
       init:
         hardware_axis: y
@@ -108,11 +102,11 @@ instrument:
       properties:
         speed_mm_s: 1.0
       type: tiling_stage
-    n stage axis:
+    ASI-Tiger-F:
       driver: voxel.devices.stage.simulated
       init:
-        hardware_axis: n
-        instrument_axis: n
+        hardware_axis: f
+        instrument_axis: f
       module: Stage
       properties:
         speed_mm_s: 1.0
@@ -288,7 +282,7 @@ instrument:
       driver: voxel.devices.stage.simulated
       module: Joystick
       type: joystick
-    vp-151mx:
+    Iris15:
       driver: voxel.devices.camera.simulated
       init:
         id: sim000
@@ -297,13 +291,13 @@ instrument:
         exposure_time_ms: 20.0
         pixel_type: mono16
         height_offest_px: 4744
-        height_px: 1152
+        height_px: 5056
         width_offset_px: 6528
-        width_px: 1152
+        width_px: 2960
         trigger:
           mode: 'off'
           polarity: rising
           source: external
       type: camera
   id: exaspim-01
-  master_device: vp-151mx
+  master_device: Iris15
