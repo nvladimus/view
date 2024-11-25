@@ -120,66 +120,40 @@ instrument:
           ao_task:
             name: ao task
             ports:
-              stage:
-                device_max_volts: 5.0
-                device_min_volts: 0.0
-                parameters:
-                  end_time_ms:
-                    channels:
-                      '488': 350.0
-                      '561': 350.0
-                      '639': 350.0
-                  max_volts:
-                    channels:
-                      '488': 5.0
-                      '561': 5.0
-                      '639': 5.0
-                  min_volts:
-                    channels:
-                      '488': 0.0
-                      '561': 0.0
-                      '639': 0.0
-                  start_time_ms:
-                    channels:
-                      '488': 60.0
-                      '561': 60.0
-                      '639': 60.0
-                port: ao1
-                waveform: square wave
               tunable lens:
                 device_max_volts: 5.0
                 device_min_volts: 0.0
                 parameters:
                   amplitude_volts:
                     channels:
-                      '488': 1.5
-                      '561': 1.0
-                      '639': 1.0
-                  cutoff_frequency_hz:
-                    channels:
-                      '488': 200
-                      '561': 200
-                      '639': 200
-                  end_time_ms:
-                    channels:
-                      '488': 400.0
-                      '561': 400.0
-                      '639': 400.0
+                      '488': 0.5
+                      '561': 0.55
+                      '639': 0.45
                   offset_volts:
                     channels:
                       '488': 2.5
-                      '561': 2.5
-                      '639': 2.5
+                      '561': 2.6
+                      '639': 2.4
+                  end_time_ms:
+                    channels:
+                      '488': 200.0
+                      '561': 200.0
+                      '639': 200.0
                   start_time_ms:
                     channels:
                       '488': 10.0
                       '561': 10.0
                       '639': 10.0
+                  cutoff_frequency_hz:
+                    channels:
+                      '488': 100
+                      '561': 100
+                      '639': 100
                 port: ao0
                 waveform: sawtooth
-              x galvo mirror:
+              L galvo mirror:
                 device_max_volts: 5.0
-                device_min_volts: 0.0
+                device_min_volts: -5.0
                 parameters:
                   amplitude_volts:
                     channels:
@@ -188,19 +162,19 @@ instrument:
                       '639': 1.0
                   cutoff_frequency_hz:
                     channels:
-                      '488': 200
-                      '561': 200
-                      '639': 200
-                  end_time_ms:
-                    channels:
-                      '488': 400.0
-                      '561': 400.0
-                      '639': 400.0
+                      '488': 100
+                      '561': 100
+                      '639': 100
                   offset_volts:
                     channels:
-                      '488': 2.5
-                      '561': 2.5
-                      '639': 2.5
+                      '488': 0.0
+                      '561': 0.0
+                      '639': 0.0
+                  end_time_ms:
+                    channels:
+                      '488': 200.0
+                      '561': 200.0
+                      '639': 200.0
                   start_time_ms:
                     channels:
                       '488': 10.0
@@ -209,7 +183,7 @@ instrument:
                 port: ao2
                 waveform: triangle wave
             timing:
-              period_time_ms: 500
+              period_time_ms: 200
               rest_time_ms: 50
               retriggerable: 'on'
               sample_mode: finite
