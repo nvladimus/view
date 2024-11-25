@@ -116,11 +116,13 @@ instrument:
       init:
         dev: Dev2
       properties:
+        ao_max_volts: 5.0
+        ao_min_volts: -5.0
         tasks:
           ao_task:
             name: ao task
             ports:
-              tunable lens:
+              L tunable lens:
                 device_max_volts: 5.0
                 device_min_volts: 0.0
                 parameters:
@@ -151,6 +153,37 @@ instrument:
                       '639': 100
                 port: ao0
                 waveform: sawtooth
+              R tunable lens:
+                device_max_volts: 5.0
+                device_min_volts: 0.0
+                parameters:
+                  amplitude_volts:
+                    channels:
+                      '488': 0.5
+                      '561': 0.55
+                      '639': 0.45
+                  offset_volts:
+                    channels:
+                      '488': 2.5
+                      '561': 2.6
+                      '639': 2.4
+                  end_time_ms:
+                    channels:
+                      '488': 200.0
+                      '561': 200.0
+                      '639': 200.0
+                  start_time_ms:
+                    channels:
+                      '488': 10.0
+                      '561': 10.0
+                      '639': 10.0
+                  cutoff_frequency_hz:
+                    channels:
+                      '488': 100
+                      '561': 100
+                      '639': 100
+                port: ao1
+                waveform: sawtooth                
               L galvo mirror:
                 device_max_volts: 5.0
                 device_min_volts: -5.0
@@ -182,6 +215,37 @@ instrument:
                       '639': 10.0
                 port: ao2
                 waveform: triangle wave
+              R galvo mirror:
+                device_max_volts: 5.0
+                device_min_volts: -5.0
+                parameters:
+                  amplitude_volts:
+                    channels:
+                      '488': 1.0
+                      '561': 1.0
+                      '639': 1.0
+                  cutoff_frequency_hz:
+                    channels:
+                      '488': 100
+                      '561': 100
+                      '639': 100
+                  offset_volts:
+                    channels:
+                      '488': 0.0
+                      '561': 0.0
+                      '639': 0.0
+                  end_time_ms:
+                    channels:
+                      '488': 200.0
+                      '561': 200.0
+                      '639': 200.0
+                  start_time_ms:
+                    channels:
+                      '488': 10.0
+                      '561': 10.0
+                      '639': 10.0
+                port: ao3
+                waveform: triangle wave                
             timing:
               period_time_ms: 200
               rest_time_ms: 50
