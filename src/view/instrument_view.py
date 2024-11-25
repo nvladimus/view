@@ -138,11 +138,11 @@ class InstrumentView(QWidget):
         stage_scroll = QScrollArea()
         stage_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         stage_scroll.setWidget(stage_axes_widget)
-        self.viewer.window.add_dock_widget(stage_scroll, area='left', name='Stages')
+        self.viewer.window.add_dock_widget(stage_scroll, area='right', name='Stages')
 
         joystick_scroll = QScrollArea()
         joystick_scroll.setWidget(self.stack_device_widgets('joystick'))
-        self.viewer.window.add_dock_widget(joystick_scroll, area='left', name='Joystick')
+        self.viewer.window.add_dock_widget(joystick_scroll, area='right', name='Joystick')
 
     def setup_laser_widgets(self) -> None:
         """
@@ -160,7 +160,7 @@ class InstrumentView(QWidget):
             horizontal.setStyleSheet(f".QFrame {{ border:1px solid {border_color}; }} ")
             laser_widgets.append(horizontal)
         laser_widget = create_widget('V', *laser_widgets)
-        self.viewer.window.add_dock_widget(laser_widget, area='bottom', name='Lasers')
+        self.viewer.window.add_dock_widget(laser_widget, area='right', name='Lasers')
 
     def setup_daq_widgets(self) -> None:
         """
@@ -269,7 +269,7 @@ class InstrumentView(QWidget):
         """
 
         stacked = self.stack_device_widgets('filter_wheel')
-        self.viewer.window.add_dock_widget(stacked, area='bottom', name='Filter Wheels')
+        self.viewer.window.add_dock_widget(stacked, area='right', name='Filter Wheels')
 
     def setup_camera_widgets(self):
         """
@@ -460,7 +460,7 @@ class InstrumentView(QWidget):
         button.setChecked(True)  # Arbitrarily set last button checked
         widget.setLayout(widget_layout)
         widget.setSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
-        self.viewer.window.add_dock_widget(widget, area='bottom', name='Channels')
+        self.viewer.window.add_dock_widget(widget, area='right', name='Channels')
 
     def change_channel(self, checked: bool, channel: str) -> None:
         """
